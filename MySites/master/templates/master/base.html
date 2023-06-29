@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+    <!-- Обязательные мета-теги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap, иконки и шрифт -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+        <title>Master</title>
+
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'master-home' %}"><i class='bx bxs-rocket bx-tada-hover'></i> Master</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link " href="{% url 'master-home' %}">Главная</a>
+              <a class="nav-item nav-link" href="{% url 'master-about' %}">О клубе</a>
+            </div>
+            <!-- Правая часть навигационной панели -->
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="#">Вход</a>
+              <a class="nav-item nav-link" href="#">Регистрация</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">1. Опишите задачу, которую нужно выполнить</li>
+                <li class="list-group-item list-group-item-light">2. Ответят свободные мастера с подходящей квалификацией</li>
+                <li class="list-group-item list-group-item-light">3. Договаривайтесь через сайт, это надежно и удобно</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <!-- Футер закреплен внизу, независимо от количества постов на странице -->
+    <footer class="text-center bg-dark">
+      <p><a href="{% url 'master-home' %}">© сайт Master 2023</a></p>
+    </footer>
+</body>
+</html>
